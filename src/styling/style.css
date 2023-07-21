@@ -1,0 +1,170 @@
+body {
+    background-color: #279bcd;
+    margin: 0;
+}
+
+a {
+    all: unset;
+}
+
+a {
+    cursor: pointer;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+input[type="checkbox" i] {
+    float: left
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type="text"],
+input[type="number"] {
+    border: 1px solid #1e31c4;
+    height: 2rem;
+    width: 100%;
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+::placeholder {
+    color: #a6a8b6;
+}
+
+.custom-btn {
+    background-color: #279bcd;
+    border: none;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 2px 4px #1e31c4;
+}
+
+.custom-btn:hover {
+    box-shadow: 4px 2px #279bcd;
+    background-color: #1e31c4;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #000;
+}
+
+.product-list-txt {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #279bcd;
+}
+
+.header-right {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+    margin: 2rem;
+}
+
+.no-data-msg {
+    text-align: center;
+}
+
+.show-card {
+    padding: 10px;
+    border-radius: 5%;
+    border: 1px solid #000;
+    background-color: #e3e3e3;
+    width: 12rem;
+    height: 12rem;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.card-contents {
+    text-align: center;
+    font-weight: bold;
+}
+
+.container-add-product {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid #279bcd;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    font-size: 16px;
+    grid-gap: 0.5rem;
+    align-items: center;
+}
+
+.form-group label {
+    text-align: right;
+    font-weight: bold;
+}
+
+.select {
+    background-color: #000;
+    color: #279bcd;
+    border: none;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.subform {
+    margin-left: 5rem;
+    width: auto;
+}
+
+.information {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.errormsg {
+    color: red;
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 2rem;
+}
