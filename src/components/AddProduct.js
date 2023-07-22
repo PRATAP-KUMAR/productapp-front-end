@@ -15,50 +15,61 @@ function AddProduct(props) {
         handleChange(e);
         helperFunction();
     }
-    
+
     return (
         <form id="product_form" name="product_form">
             <fieldset>
+                <legend>FORM</legend>
                 <div className="container-add-product">
                     <div className="form-group">
-                        <label htmlFor="sku">SKU</label>
-                        <input
-                            type="text"
-                            placeholder="#sku"
-                            id="sku"
-                            name="sku"
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="name">Name</label>
-                        <input
-                            type="text"
-                            placeholder="#name"
-                            id="name"
-                            name="name"
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="price">Price</label>
-                        <input
-                            type="number"
-                            min={1}
-                            placeholder="#price"
-                            id="price"
-                            name="price"
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="Type Switcher">Type Switcher</label>
-                        <select
-                            name="type"
-                            id="productType"
-                            className="select"
-                            defaultValue={"*"}
-                            onChange={onChange}
-                        >
-                            <option value="*" disabled>Type Switcher</option>
-                            <option value="DVD">DVD-Disc</option>
-                            <option value="Furniture">Furniture</option>
-                            <option value="Book">Book</option>
-                        </select>
+                        <div>
+                            <label htmlFor="sku">SKU</label>
+                            <input
+                                type="text"
+                                placeholder="#sku"
+                                id="sku"
+                                name="sku"
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="name">Name</label>
+                            <input
+                                type="text"
+                                placeholder="#name"
+                                id="name"
+                                name="name"
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="price">Price</label>
+                            <input
+                                type="number"
+                                min={1}
+                                placeholder="#price"
+                                id="price"
+                                name="price"
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="Type Switcher">Type Switcher</label>
+                            <select
+                                name="type"
+                                id="productType"
+                                className="select"
+                                defaultValue={"*"}
+                                onChange={onChange}
+                            >
+                                <optgroup>
+                                    <option value="*" disabled>Type Switcher</option>
+                                    <option value="DVD">DVD-Disc</option>
+                                    <option value="Furniture">Furniture</option>
+                                    <option value="Book">Book</option>
+                                </optgroup>
+                            </select>
+                        </div>
                     </div>
                     {
                         subFormId === 'DVD' ? <Dvd handleChange={handleChange} /> :

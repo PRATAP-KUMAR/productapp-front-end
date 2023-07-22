@@ -20,10 +20,12 @@ const Header = (props) => {
   }
 
   return (
-    <>
-      <nav className='header'>
-        <div className='product-list-txt'>{url === 'add-product' ? 'Add Product' : 'Product List'}</div> :
-        <div className='header-right'>
+    <header>
+      <nav>
+        <h2>
+          {url === 'add-product' ? 'Add Product' : 'Product List'}
+        </h2>
+        <div>
           {
             url === 'add-product' ?
               <button type='button' onClick={handleSave} className='custom-btn'>Save</button> :
@@ -36,7 +38,7 @@ const Header = (props) => {
           }
         </div>
       </nav>
-    </>
+    </header>
   )
 }
 

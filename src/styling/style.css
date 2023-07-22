@@ -1,17 +1,26 @@
+html {
+    font-size: calc(15px + 0.390625vw);
+}
+
 body {
-    background-color: #279bcd;
+    background-color: #00caff;
     margin: 0;
 }
 
 a {
     all: unset;
-}
-
-a {
     cursor: pointer;
 }
 
-button,
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: revert;
+}
+
 input[type="submit"],
 input[type="reset"] {
     background: none;
@@ -27,7 +36,8 @@ input[type="checkbox" i] {
     float: left
 }
 
-input:focus {
+input:focus,
+select:focus {
     outline: none;
 }
 
@@ -36,60 +46,69 @@ input[type="number"] {
     border: 1px solid #1e31c4;
     height: 2rem;
     width: 100%;
-    font-size: 1rem;
     padding-left: 1rem;
+    font-size: calc(15px + 0.390625vw);
 }
 
 ::placeholder {
     color: #a6a8b6;
+    font-size: calc(10px + 0.390625vw);
 }
 
-.custom-btn {
-    background-color: #279bcd;
-    border: none;
-    padding: 6px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: bold;
-    box-shadow: 2px 4px #1e31c4;
-}
-
-.custom-btn:hover {
-    box-shadow: 4px 2px #279bcd;
-    background-color: #1e31c4;
-}
-
-.header {
+button,
+a {
+    width: fit-content;
+    background-color: #00caff;
+    color: #000;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    background-color: #000;
-}
-
-.product-list-txt {
-    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     font-weight: bold;
-    color: #279bcd;
+    padding: 5px;
+    border-radius: 5px;
 }
 
-.header-right {
+button:hover,
+a:hover {
+    background-color: orange;
+}
+
+button:active,
+a:active {
+    background-color: orangered;
+}
+
+header {
+    top: 0;
+    position: sticky;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    padding: 0 2rem;
+    height: 50px;
+    align-items: center;
+}
+
+nav h2 {
+    color: #00caff;
+    margin: 0;
+}
+
+nav div {
     display: flex;
     gap: 2rem;
-    flex-direction: row;
-    align-items: center;
 }
 
 .container {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: flex-start;
-    margin: 2rem;
+    margin: 1rem;
 }
 
 .no-data-msg {
@@ -100,7 +119,7 @@ input[type="number"] {
     padding: 10px;
     border-radius: 5%;
     border: 1px solid #000;
-    background-color: #e3e3e3;
+    background-color: #fff;
     width: 12rem;
     height: 12rem;
 }
@@ -118,53 +137,83 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0.1rem;
+    padding: 0.5rem;
     text-align: center;
     justify-content: center;
-    border: 2px solid #279bcd;
+}
+
+form legend {
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 0.2px solid black;
+    margin: 2rem;
+    border-radius: 0.5rem;
 }
 
 .form-group {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    font-size: 16px;
-    grid-gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-group div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 2rem;
     align-items: center;
 }
 
-.form-group label {
+.form-group div label {
     text-align: right;
     font-weight: bold;
+    flex: 0.25;
 }
 
-.select {
-    background-color: #000;
-    color: #279bcd;
-    border: none;
-    padding: 6px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+.form-group div input,
+.form-group div select {
+    width: 50%;
+    align-items: left;
+    flex: 0.75;
+}
+
+.form-group div select {
+    height: 2rem;
+    padding-left: 1rem;
+    font-size: calc(15px + 0.390625vw);
+}
+
+optgroup {
+    color: green;
     font-weight: bold;
-}
-
-.subform {
-    margin-left: 5rem;
-    width: auto;
 }
 
 .information {
     font-style: italic;
     font-weight: bold;
-    font-size: 1rem;
-    text-align: left;
+    text-align: center;
 }
 
 .errormsg {
     color: red;
     font-weight: bold;
-    font-size: 24px;
     margin-left: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: #6fd3e9;
+    }
+
+    .container {
+        gap: 1rem;
+    }
+
+    .show-card {
+        padding: 0;
+    }
 }
