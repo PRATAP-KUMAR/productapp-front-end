@@ -18,7 +18,7 @@ function App() {
     const url = `${apiUrl}/get-products`
     const getProducts = async () => {
       const response = await axios.get(url);
-      setProducts(response.data.products);
+      setProducts(response.data);
     }
     getProducts();
   }, [action]);

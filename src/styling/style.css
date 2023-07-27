@@ -113,6 +113,12 @@ nav div {
 
 .no-data-msg {
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: calc(100vh - 50px);
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .show-card {

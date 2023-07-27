@@ -4,11 +4,11 @@ import "../styling/style.css";
 const ListProducts = (props) => {
     const obj = props;
     const { products } = obj;
-    if (!products) {
+    if (products.length === 0) {
         return (
-            <p className="no-data-msg">
-                No data available
-            </p>
+            <div className="no-data-msg">
+                There are no products
+            </div>
         )
     }
 
