@@ -1,6 +1,4 @@
-const Furniture = (props) => {
-    const obj = props;
-    const { handleChange } = obj;
+const Furniture = () => {
     return (
         <fieldset>
             <legend>Furniture</legend>
@@ -14,7 +12,6 @@ const Furniture = (props) => {
                             placeholder="#height"
                             id="height"
                             name="height"
-                            onChange={handleChange}
                         />
                     </div>
                     <div>
@@ -25,7 +22,6 @@ const Furniture = (props) => {
                             placeholder="#width"
                             id="width"
                             name="width"
-                            onChange={handleChange}
                         />
                     </div>
                     <div>
@@ -36,7 +32,6 @@ const Furniture = (props) => {
                             placeholder="#length"
                             id="length"
                             name="length"
-                            onChange={handleChange}
                         />
                     </div>
                 </div>

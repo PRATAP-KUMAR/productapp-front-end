@@ -1,6 +1,4 @@
-const Book = (props) => {
-    const obj = props;
-    const { handleChange } = obj;
+const Book = () => {
     return (
         <fieldset>
             <legend>Book</legend>
@@ -14,7 +12,6 @@ const Book = (props) => {
                             placeholder="#weight"
                             id="weight"
                             name="weight"
-                            onChange={handleChange}
                         />
                     </div>
                 </div>

@@ -1,6 +1,4 @@
-const Dvd = (props) => {
-    const obj = props;
-    const { handleChange } = obj;
+const Dvd = () => {
     return (
         <fieldset>
             <legend>Dvd</legend>
@@ -14,7 +12,6 @@ const Dvd = (props) => {
                             placeholder="#size"
                             id="size"
                             name="size"
-                            onChange={handleChange}
                         />
                     </div>
                 </div>

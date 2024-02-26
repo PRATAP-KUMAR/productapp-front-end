@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import helperFunction from "../errorEliminator";
 import Book from "./forms/Book";
 import Dvd from "./forms/Dvd";
 import Furniture from "./forms/Furniture";
+import errorEliminator from "../errorEliminator";
 
-function AddProduct(props) {
-    const [subFormId, setSubFormId] = useState('*')
+function AddProduct() {
+    const [subFormId, setSubFormId] = useState('*');
 
-    const obj = props;
-    const { handleChange } = obj;
+    errorEliminator();
 
-    const onChange = (e) => {
+    const onTypeSwitcherChange = (e) => {
         setSubFormId(e.target.value);
-        handleChange(e);
-        helperFunction();
+        errorEliminator();
     }
 
     return (
@@ -29,7 +27,6 @@ function AddProduct(props) {
                                 placeholder="#sku"
                                 id="sku"
                                 name="sku"
-                                onChange={handleChange}
                             />
                         </div>
                         <div>
@@ -39,7 +36,6 @@ function AddProduct(props) {
                                 placeholder="#name"
                                 id="name"
                                 name="name"
-                                onChange={handleChange}
                             />
                         </div>
                         <div>
@@ -50,7 +46,6 @@ function AddProduct(props) {
                                 placeholder="#price"
                                 id="price"
                                 name="price"
-                                onChange={handleChange}
                             />
                         </div>
                         <div>
@@ -60,7 +55,7 @@ function AddProduct(props) {
                                 id="productType"
                                 className="select"
                                 defaultValue={"*"}
-                                onChange={onChange}
+                                onChange={onTypeSwitcherChange}
                             >
                                 <optgroup>
                                     <option value="*" disabled>Type Switcher</option>
@@ -72,9 +67,9 @@ function AddProduct(props) {
                         </div>
                     </div>
                     {
-                        subFormId === 'DVD' ? <Dvd handleChange={handleChange} /> :
-                            subFormId === 'Furniture' ? <Furniture handleChange={handleChange} /> :
-                                subFormId === 'Book' ? <Book handleChange={handleChange} /> : null
+                        subFormId === 'DVD' ? <Dvd /> :
+                            subFormId === 'Furniture' ? <Furniture /> :
+                                subFormId === 'Book' ? <Book /> : null
                     }
                 </div >
             </fieldset>
