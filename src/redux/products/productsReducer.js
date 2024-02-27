@@ -16,9 +16,15 @@ const productsReducer = (state = initialState, action) => {
 
 export const getProductsAction = () => async (dispatch) => {
     const URL = `${apiUrl}/get-products`
-    const response = await axios.get(URL);
-    const data = await response.data;
-    dispatch({ type: GET_PRODUCTS, payload: data });
+    let data;
+    axios.get(URL)
+        .then(response => {
+            data = response.data;
+            dispatch({ type: GET_PRODUCTS, payload: data });
+        })
+        .catch(error => {
+            dispatch({ type: GET_PRODUCTS, payload: error.message });
+        })
 }
 
 export default productsReducer;

@@ -7,6 +7,13 @@ body {
     margin: 0;
 }
 
+.network-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
 a {
     all: unset;
     cursor: pointer;

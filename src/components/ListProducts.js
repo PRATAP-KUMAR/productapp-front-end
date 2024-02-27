@@ -12,26 +12,31 @@ const ListProducts = () => {
     }, [dispatch, products.length]);
 
     return (
-        <div id="container" className="container">
-            {
-                products.map((product) => (
-                    <div className="show-card" key={product.id}>
-                        <input type="checkbox" className="delete-checkbox" id={product.id} />
-                        <br />
-                        <div className="card-contents">
-                            <p className="uppercase">{product.sku}</p>
-                            <p>{product.name}</p>
-                            <p>{product.price} $</p>
-                            {
-                                product.type === "DVD" ? `Size: ${product.size} MB` :
-                                    product.type === "Furniture" ? `Dimension: ${product.height}x${product.width}x${product.length}` :
-                                        `Weight: ${product.weight}KG`
-                            }
+        typeof (products) === "string" ? (
+            <div className="network-error">
+                <h3>Network Error...</h3>
+            </div>
+        ) :
+            < div id="container" className="container" >
+                {
+                    products.map((product) => (
+                        <div className="show-card" key={product.id}>
+                            <input type="checkbox" className="delete-checkbox" id={product.id} />
+                            <br />
+                            <div className="card-contents">
+                                <p className="uppercase">{product.sku}</p>
+                                <p>{product.name}</p>
+                                <p>{product.price} $</p>
+                                {
+                                    product.type === "DVD" ? `Size: ${product.size} MB` :
+                                        product.type === "Furniture" ? `Dimension: ${product.height}x${product.width}x${product.length}` :
+                                            `Weight: ${product.weight}KG`
+                                }
+                            </div>
                         </div>
-                    </div>
-                ))
-            }
-        </div>
+                    ))
+                }
+            </div >
     )
 }
 
