@@ -137,10 +137,6 @@ nav div {
     height: 12rem;
 }
 
-.uppercase {
-    text-transform: uppercase;
-}
-
 .card-contents {
     text-align: center;
     font-weight: bold;

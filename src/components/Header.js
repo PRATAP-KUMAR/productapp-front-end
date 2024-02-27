@@ -41,6 +41,16 @@ const Header = () => {
       if (!value) return errorIndicator("Please fill all fields");
     }
 
+    let skus = []
+    products.forEach(product => {
+      for (const [key, value] of Object.entries(product)) {
+        if (key === "sku")
+          skus.push(value);
+      }
+    })
+
+    if (skus.includes(inputs["sku"])) return errorIndicator(`${inputs["sku"]} exists, change the SKU`);
+
     const postUrl = `${apiUrl}/add-product`
     axios.post(postUrl, inputs, {
       headers: {
