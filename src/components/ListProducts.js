@@ -7,7 +7,6 @@ const ListProducts = () => {
     const products = useSelector((state) => state.productsReducer);
     const dispatch = useDispatch();
 
-
     useEffect(() => {
         dispatch(getProductsAction());
     }, [dispatch, products.length]);
